@@ -28,9 +28,10 @@ class PostSerializer(serializers.ModelSerializer):
         return request.user == obj.owner
 
     class Meta:
-        model = Profile
+        model = Post
         fields = [
-            'id', 'owner', 'created_at', 'updated_at', 'name',
-            'content', 'image', 'image_filter'
+            'id', 'owner', 'is_owner', 'profile_id',
+            'profile_image', 'created_at', 'updated_at',
+            'title', 'content', 'image', 'image_filter'
         ]
 
