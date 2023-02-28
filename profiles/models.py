@@ -10,14 +10,14 @@ class Profile(models.Model):
     name = models.CharField(max_length=255, blank=True)
     content = models.TextField(blank=True)
     image = models.ImageField(
-        upload_to='images/', default='../default_profile_oulcxpo'
+        upload_to='images/', default='../default_profile_qdjgyp'
     )
 
     class Meta:
         ordering = ['-created_at']
 
     def __str__(self):
-        return f"(self.owner)'s profile"
+        return f"{self.owner}'s profile"
 
 
 def create_profile(sender, instance, created, **kwargs):
